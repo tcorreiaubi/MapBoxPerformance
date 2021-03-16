@@ -3,14 +3,6 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-pre_install do |installer|
-  $RNMBGL.pre_install(installer)
-end
-
-post_install do |installer|
-  $RNMBGL.post_install(installer)
-end
-
 target 'MapboxPerformance' do
   config = use_native_modules!
 
@@ -29,6 +21,9 @@ target 'MapboxPerformance' do
   #post_install do |installer|
   #  flipper_post_install(installer)
   #end
+
+  # Mapbox
+  pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
 end
 
 target 'MapboxPerformance-tvOS' do
